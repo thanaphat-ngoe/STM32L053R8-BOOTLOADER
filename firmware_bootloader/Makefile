@@ -5,9 +5,8 @@ NULL		:= 2>/dev/null
 endif
 
 # We are building from inside src/
-ROOT_DIR		= .
-SRC_DIR     	= ./src
-INC_DIR     	= .
+SRC_DIR     	= src
+INC_DIR     	= inc
 OPENCM3_DIR 	= ../libopencm3
 
 BINARY = firmware_bootloader
@@ -22,7 +21,7 @@ ARCH_FLAGS	= -mthumb -mcpu=cortex-m0plus
 ###############################################################################
 # Linkerscript
 
-LDSCRIPT    = $(ROOT_DIR)/STM32L053R8TX_FLASH.ld
+LDSCRIPT    = STM32L053R8TX_FLASH.ld
 LDLIBS		+= -l$(LIBNAME)
 LDFLAGS		+= -L$(OPENCM3_DIR)/lib
 

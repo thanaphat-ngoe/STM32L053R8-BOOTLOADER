@@ -5,10 +5,11 @@ NULL		:= 2>/dev/null
 endif
 
 # We are building from inside src/
-ROOT_DIR		= .
-SRC_DIR     	= ./src
-INC_DIR     	= .
+SRC_DIR     	= src
+INC_DIR     	= inc
 OPENCM3_DIR 	= ../libopencm3
+SHARED_SRC_DIR  = ../shared/src
+SHARED_INC_DIR  = ../shared/inc
 
 BINARY = firmware_application
 
@@ -22,7 +23,7 @@ ARCH_FLAGS	= -mthumb -mcpu=cortex-m0plus
 ###############################################################################
 # Linkerscript
 
-LDSCRIPT    = $(ROOT_DIR)/STM32L053R8TX_FLASH.ld
+LDSCRIPT    = STM32L053R8TX_FLASH.ld
 LDLIBS		+= -l$(LIBNAME)
 LDFLAGS		+= -L$(OPENCM3_DIR)/lib
 
@@ -31,6 +32,7 @@ LDFLAGS		+= -L$(OPENCM3_DIR)/lib
 
 DEFS		+= -I$(OPENCM3_DIR)/include
 DEFS		+= -I$(INC_DIR)
+DEFS		+= -I$(SHARED_INC_DIR)
 
 ###############################################################################
 # Executables
@@ -56,6 +58,7 @@ CSTD		?= -std=c11
 
 OBJS		+= $(SRC_DIR)/$(BINARY).o
 OBJS		+= $(SRC_DIR)/firmware_bootloader.o
+OBJS		+= $(SHARED_SRC_DIR)/core/system.o
 
 ###############################################################################
 # C flags
