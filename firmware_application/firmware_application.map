@@ -53,6 +53,7 @@ Discarded input sections
  .group         0x00000000        0xc src/firmware_application.o
  .group         0x00000000        0xc src/firmware_application.o
  .group         0x00000000        0xc src/firmware_application.o
+ .group         0x00000000        0xc src/firmware_application.o
  .text          0x00000000        0x0 src/firmware_application.o
  .data          0x00000000        0x0 src/firmware_application.o
  .bss           0x00000000        0x0 src/firmware_application.o
@@ -81,12 +82,14 @@ Discarded input sections
  .group         0x00000000        0xc ../shared/src/core/system.o
  .group         0x00000000        0xc ../shared/src/core/system.o
  .group         0x00000000        0xc ../shared/src/core/system.o
+ .group         0x00000000        0xc ../shared/src/core/system.o
  .text          0x00000000        0x0 ../shared/src/core/system.o
  .data          0x00000000        0x0 ../shared/src/core/system.o
  .bss           0x00000000        0x0 ../shared/src/core/system.o
  .rodata.pll_32mhz_config
                 0x00000000       0x1c ../shared/src/core/system.o
  .debug_macro   0x00000000      0xaae ../shared/src/core/system.o
+ .debug_macro   0x00000000       0x1c ../shared/src/core/system.o
  .debug_macro   0x00000000       0x22 ../shared/src/core/system.o
  .debug_macro   0x00000000       0x56 ../shared/src/core/system.o
  .debug_macro   0x00000000       0x51 ../shared/src/core/system.o
@@ -94,13 +97,14 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ../shared/src/core/system.o
  .debug_macro   0x00000000      0x1df ../shared/src/core/system.o
  .debug_macro   0x00000000       0x22 ../shared/src/core/system.o
- .debug_macro   0x00000000       0x10 ../shared/src/core/system.o
- .debug_macro   0x00000000      0x100 ../shared/src/core/system.o
+ .debug_macro   0x00000000       0xe8 ../shared/src/core/system.o
  .debug_macro   0x00000000       0x52 ../shared/src/core/system.o
  .debug_macro   0x00000000      0x166 ../shared/src/core/system.o
  .debug_macro   0x00000000       0x8e ../shared/src/core/system.o
  .debug_macro   0x00000000       0x58 ../shared/src/core/system.o
  .debug_macro   0x00000000      0x903 ../shared/src/core/system.o
+ .debug_macro   0x00000000       0x10 ../shared/src/core/system.o
+ .group         0x00000000        0xc ../shared/src/core/uart.o
  .group         0x00000000        0xc ../shared/src/core/uart.o
  .group         0x00000000        0xc ../shared/src/core/uart.o
  .group         0x00000000        0xc ../shared/src/core/uart.o
@@ -128,6 +132,7 @@ Discarded input sections
  .text.uart_read
                 0x00000000       0x24 ../shared/src/core/uart.o
  .debug_macro   0x00000000      0xaae ../shared/src/core/uart.o
+ .debug_macro   0x00000000       0x1c ../shared/src/core/uart.o
  .debug_macro   0x00000000       0x22 ../shared/src/core/uart.o
  .debug_macro   0x00000000       0x56 ../shared/src/core/uart.o
  .debug_macro   0x00000000       0x51 ../shared/src/core/uart.o
@@ -135,7 +140,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x6a ../shared/src/core/uart.o
  .debug_macro   0x00000000      0x1df ../shared/src/core/uart.o
  .debug_macro   0x00000000       0x22 ../shared/src/core/uart.o
- .debug_macro   0x00000000      0x100 ../shared/src/core/uart.o
+ .debug_macro   0x00000000       0xe8 ../shared/src/core/uart.o
  .debug_macro   0x00000000       0x52 ../shared/src/core/uart.o
  .debug_macro   0x00000000      0x166 ../shared/src/core/uart.o
  .debug_macro   0x00000000       0x8e ../shared/src/core/uart.o
@@ -164,12 +169,14 @@ Discarded input sections
                 0x00000000       0x10 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
  .text.flash_unlock_option_bytes
                 0x00000000       0x18 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
+ .debug_macro   0x00000000       0x1c ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
  .debug_macro   0x00000000       0x22 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
  .debug_macro   0x00000000       0x51 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
  .debug_macro   0x00000000      0x103 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
  .debug_macro   0x00000000       0x6a ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
  .debug_macro   0x00000000      0x1df ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
  .debug_macro   0x00000000       0x22 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
+ .debug_macro   0x00000000       0xe8 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
  .debug_macro   0x00000000       0x52 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
  .debug_macro   0x00000000      0x166 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
  .debug_macro   0x00000000      0x166 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
@@ -725,7 +732,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xe8 ../libopencm3/lib/libopencm3_stm32l0.a(assert.o)
  .debug_macro   0x00000000       0x16 ../libopencm3/lib/libopencm3_stm32l0.a(assert.o)
  .debug_line    0x00000000      0x25d ../libopencm3/lib/libopencm3_stm32l0.a(assert.o)
- .debug_str     0x00000000     0x414e ../libopencm3/lib/libopencm3_stm32l0.a(assert.o)
+ .debug_str     0x00000000     0x4155 ../libopencm3/lib/libopencm3_stm32l0.a(assert.o)
  .comment       0x00000000       0x47 ../libopencm3/lib/libopencm3_stm32l0.a(assert.o)
  .debug_frame   0x00000000       0x38 ../libopencm3/lib/libopencm3_stm32l0.a(assert.o)
  .ARM.attributes
@@ -1164,57 +1171,56 @@ LOAD linker stubs
  .debug_rnglists
                 0x00000422       0x46 ../libopencm3/lib/libopencm3_stm32l0.a(nvic.o)
 
-.debug_macro    0x00000000     0x46b1
- .debug_macro   0x00000000      0x147 src/firmware_application.o
- .debug_macro   0x00000147      0xaae src/firmware_application.o
- .debug_macro   0x00000bf5       0x22 src/firmware_application.o
- .debug_macro   0x00000c17       0x56 src/firmware_application.o
- .debug_macro   0x00000c6d       0x51 src/firmware_application.o
- .debug_macro   0x00000cbe      0x103 src/firmware_application.o
- .debug_macro   0x00000dc1       0x6a src/firmware_application.o
- .debug_macro   0x00000e2b      0x1df src/firmware_application.o
- .debug_macro   0x0000100a       0x22 src/firmware_application.o
- .debug_macro   0x0000102c       0x10 src/firmware_application.o
- .debug_macro   0x0000103c      0x100 src/firmware_application.o
- .debug_macro   0x0000113c       0x52 src/firmware_application.o
- .debug_macro   0x0000118e      0x166 src/firmware_application.o
- .debug_macro   0x000012f4       0x8e src/firmware_application.o
- .debug_macro   0x00001382       0x58 src/firmware_application.o
- .debug_macro   0x000013da      0x903 src/firmware_application.o
- .debug_macro   0x00001cdd       0x76 src/firmware_application.o
- .debug_macro   0x00001d53      0x37e src/firmware_application.o
- .debug_macro   0x000020d1       0xca src/firmware_application.o
- .debug_macro   0x0000219b       0x46 src/firmware_application.o
- .debug_macro   0x000021e1      0x1a5 src/firmware_application.o
- .debug_macro   0x00002386      0x14c ../shared/src/core/system.o
- .debug_macro   0x000024d2      0x166 ../shared/src/core/system.o
- .debug_macro   0x00002638       0x46 ../shared/src/core/system.o
- .debug_macro   0x0000267e       0x6f ../shared/src/core/system.o
- .debug_macro   0x000026ed       0x49 ../shared/src/core/system.o
- .debug_macro   0x00002736       0xca ../shared/src/core/system.o
- .debug_macro   0x00002800      0x13b ../shared/src/core/uart.o
- .debug_macro   0x0000293b       0x94 ../shared/src/core/uart.o
- .debug_macro   0x000029cf      0x530 ../shared/src/core/uart.o
- .debug_macro   0x00002eff       0x22 ../shared/src/core/uart.o
- .debug_macro   0x00002f21       0xbc ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
- .debug_macro   0x00002fdd      0xaa2 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
- .debug_macro   0x00003a7f       0x1c ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
- .debug_macro   0x00003a9b       0x56 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
- .debug_macro   0x00003af1       0xe8 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
- .debug_macro   0x00003bd9       0xd6 ../libopencm3/lib/libopencm3_stm32l0.a(gpio_common_all.o)
- .debug_macro   0x00003caf       0xd6 ../libopencm3/lib/libopencm3_stm32l0.a(gpio_common_f0234.o)
- .debug_macro   0x00003d85       0xe4 ../libopencm3/lib/libopencm3_stm32l0.a(pwr_common_v2.o)
- .debug_macro   0x00003e69      0x113 ../libopencm3/lib/libopencm3_stm32l0.a(rcc.o)
- .debug_macro   0x00003f7c       0x16 ../libopencm3/lib/libopencm3_stm32l0.a(rcc.o)
- .debug_macro   0x00003f92       0xfa ../libopencm3/lib/libopencm3_stm32l0.a(rcc_common_all.o)
- .debug_macro   0x0000408c      0x105 ../libopencm3/lib/libopencm3_stm32l0.a(usart_common_all.o)
- .debug_macro   0x00004191       0xc1 ../libopencm3/lib/libopencm3_stm32l0.a(usart_common_v2.o)
- .debug_macro   0x00004252       0xcf ../libopencm3/lib/libopencm3_stm32l0.a(vector.o)
- .debug_macro   0x00004321      0x19f ../libopencm3/lib/libopencm3_stm32l0.a(vector.o)
- .debug_macro   0x000044c0       0x92 ../libopencm3/lib/libopencm3_stm32l0.a(systick.o)
- .debug_macro   0x00004552       0x69 ../libopencm3/lib/libopencm3_stm32l0.a(systick.o)
- .debug_macro   0x000045bb       0xb3 ../libopencm3/lib/libopencm3_stm32l0.a(nvic.o)
- .debug_macro   0x0000466e       0x43 ../libopencm3/lib/libopencm3_stm32l0.a(nvic.o)
+.debug_macro    0x00000000     0x45c0
+ .debug_macro   0x00000000      0x14c src/firmware_application.o
+ .debug_macro   0x0000014c      0xaae src/firmware_application.o
+ .debug_macro   0x00000bfa       0x1c src/firmware_application.o
+ .debug_macro   0x00000c16       0x22 src/firmware_application.o
+ .debug_macro   0x00000c38       0x56 src/firmware_application.o
+ .debug_macro   0x00000c8e       0x51 src/firmware_application.o
+ .debug_macro   0x00000cdf      0x103 src/firmware_application.o
+ .debug_macro   0x00000de2       0x6a src/firmware_application.o
+ .debug_macro   0x00000e4c      0x1df src/firmware_application.o
+ .debug_macro   0x0000102b       0x22 src/firmware_application.o
+ .debug_macro   0x0000104d       0xe8 src/firmware_application.o
+ .debug_macro   0x00001135       0x52 src/firmware_application.o
+ .debug_macro   0x00001187      0x166 src/firmware_application.o
+ .debug_macro   0x000012ed       0x8e src/firmware_application.o
+ .debug_macro   0x0000137b       0x58 src/firmware_application.o
+ .debug_macro   0x000013d3      0x903 src/firmware_application.o
+ .debug_macro   0x00001cd6       0x76 src/firmware_application.o
+ .debug_macro   0x00001d4c      0x37e src/firmware_application.o
+ .debug_macro   0x000020ca       0xca src/firmware_application.o
+ .debug_macro   0x00002194       0x46 src/firmware_application.o
+ .debug_macro   0x000021da      0x1a5 src/firmware_application.o
+ .debug_macro   0x0000237f       0x10 src/firmware_application.o
+ .debug_macro   0x0000238f      0x151 ../shared/src/core/system.o
+ .debug_macro   0x000024e0      0x166 ../shared/src/core/system.o
+ .debug_macro   0x00002646       0x46 ../shared/src/core/system.o
+ .debug_macro   0x0000268c       0x6f ../shared/src/core/system.o
+ .debug_macro   0x000026fb       0x49 ../shared/src/core/system.o
+ .debug_macro   0x00002744       0xca ../shared/src/core/system.o
+ .debug_macro   0x0000280e      0x140 ../shared/src/core/uart.o
+ .debug_macro   0x0000294e       0x94 ../shared/src/core/uart.o
+ .debug_macro   0x000029e2      0x530 ../shared/src/core/uart.o
+ .debug_macro   0x00002f12       0x22 ../shared/src/core/uart.o
+ .debug_macro   0x00002f34       0xbc ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
+ .debug_macro   0x00002ff0      0xaa2 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
+ .debug_macro   0x00003a92       0x56 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
+ .debug_macro   0x00003ae8       0xd6 ../libopencm3/lib/libopencm3_stm32l0.a(gpio_common_all.o)
+ .debug_macro   0x00003bbe       0xd6 ../libopencm3/lib/libopencm3_stm32l0.a(gpio_common_f0234.o)
+ .debug_macro   0x00003c94       0xe4 ../libopencm3/lib/libopencm3_stm32l0.a(pwr_common_v2.o)
+ .debug_macro   0x00003d78      0x113 ../libopencm3/lib/libopencm3_stm32l0.a(rcc.o)
+ .debug_macro   0x00003e8b       0x16 ../libopencm3/lib/libopencm3_stm32l0.a(rcc.o)
+ .debug_macro   0x00003ea1       0xfa ../libopencm3/lib/libopencm3_stm32l0.a(rcc_common_all.o)
+ .debug_macro   0x00003f9b      0x105 ../libopencm3/lib/libopencm3_stm32l0.a(usart_common_all.o)
+ .debug_macro   0x000040a0       0xc1 ../libopencm3/lib/libopencm3_stm32l0.a(usart_common_v2.o)
+ .debug_macro   0x00004161       0xcf ../libopencm3/lib/libopencm3_stm32l0.a(vector.o)
+ .debug_macro   0x00004230      0x19f ../libopencm3/lib/libopencm3_stm32l0.a(vector.o)
+ .debug_macro   0x000043cf       0x92 ../libopencm3/lib/libopencm3_stm32l0.a(systick.o)
+ .debug_macro   0x00004461       0x69 ../libopencm3/lib/libopencm3_stm32l0.a(systick.o)
+ .debug_macro   0x000044ca       0xb3 ../libopencm3/lib/libopencm3_stm32l0.a(nvic.o)
+ .debug_macro   0x0000457d       0x43 ../libopencm3/lib/libopencm3_stm32l0.a(nvic.o)
 
 .debug_line     0x00000000     0x4bb2
  .debug_line    0x00000000      0x468 src/firmware_application.o
@@ -1232,22 +1238,22 @@ LOAD linker stubs
  .debug_line    0x0000437e      0x42f ../libopencm3/lib/libopencm3_stm32l0.a(systick.o)
  .debug_line    0x000047ad      0x405 ../libopencm3/lib/libopencm3_stm32l0.a(nvic.o)
 
-.debug_str      0x00000000     0xd811
- .debug_str     0x00000000     0xd811 src/firmware_application.o
-                               0x9688 (size before relaxing)
- .debug_str     0x0000d811     0x8ac8 ../shared/src/core/system.o
- .debug_str     0x0000d811     0x9a1f ../shared/src/core/uart.o
- .debug_str     0x0000d811     0x5474 ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
- .debug_str     0x0000d811     0x6044 ../libopencm3/lib/libopencm3_stm32l0.a(gpio_common_all.o)
- .debug_str     0x0000d811     0x6066 ../libopencm3/lib/libopencm3_stm32l0.a(gpio_common_f0234.o)
- .debug_str     0x0000d811     0x7544 ../libopencm3/lib/libopencm3_stm32l0.a(pwr_common_v2.o)
- .debug_str     0x0000d811     0x8666 ../libopencm3/lib/libopencm3_stm32l0.a(rcc.o)
- .debug_str     0x0000d811     0x7b73 ../libopencm3/lib/libopencm3_stm32l0.a(rcc_common_all.o)
- .debug_str     0x0000d811     0x9478 ../libopencm3/lib/libopencm3_stm32l0.a(usart_common_all.o)
- .debug_str     0x0000d811     0x6929 ../libopencm3/lib/libopencm3_stm32l0.a(usart_common_v2.o)
- .debug_str     0x0000d811     0x542e ../libopencm3/lib/libopencm3_stm32l0.a(vector.o)
- .debug_str     0x0000d811     0x451c ../libopencm3/lib/libopencm3_stm32l0.a(systick.o)
- .debug_str     0x0000d811     0x4f07 ../libopencm3/lib/libopencm3_stm32l0.a(nvic.o)
+.debug_str      0x00000000     0xd81f
+ .debug_str     0x00000000     0xd81f src/firmware_application.o
+                               0x968f (size before relaxing)
+ .debug_str     0x0000d81f     0x8acf ../shared/src/core/system.o
+ .debug_str     0x0000d81f     0x9a26 ../shared/src/core/uart.o
+ .debug_str     0x0000d81f     0x547b ../libopencm3/lib/libopencm3_stm32l0.a(flash_common_all.o)
+ .debug_str     0x0000d81f     0x604b ../libopencm3/lib/libopencm3_stm32l0.a(gpio_common_all.o)
+ .debug_str     0x0000d81f     0x606d ../libopencm3/lib/libopencm3_stm32l0.a(gpio_common_f0234.o)
+ .debug_str     0x0000d81f     0x754b ../libopencm3/lib/libopencm3_stm32l0.a(pwr_common_v2.o)
+ .debug_str     0x0000d81f     0x866d ../libopencm3/lib/libopencm3_stm32l0.a(rcc.o)
+ .debug_str     0x0000d81f     0x7b7a ../libopencm3/lib/libopencm3_stm32l0.a(rcc_common_all.o)
+ .debug_str     0x0000d81f     0x947f ../libopencm3/lib/libopencm3_stm32l0.a(usart_common_all.o)
+ .debug_str     0x0000d81f     0x6930 ../libopencm3/lib/libopencm3_stm32l0.a(usart_common_v2.o)
+ .debug_str     0x0000d81f     0x5435 ../libopencm3/lib/libopencm3_stm32l0.a(vector.o)
+ .debug_str     0x0000d81f     0x4523 ../libopencm3/lib/libopencm3_stm32l0.a(systick.o)
+ .debug_str     0x0000d81f     0x4f0e ../libopencm3/lib/libopencm3_stm32l0.a(nvic.o)
 
 .comment        0x00000000       0x46
  .comment       0x00000000       0x46 src/firmware_application.o

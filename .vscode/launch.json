@@ -1,20 +1,24 @@
 {
 	"configurations": [
 		{
-			"name": "OpenOCD: Debug Application",
-			"cwd": "${workspaceFolder}/src",
-			"executable": "firmware.elf",
+			"name": "Cortex Debug",
+			"cwd": "${workspaceFolder}",
+			"executable": "${workspaceFolder}/firmware_application/firmware_application.elf",
 			"request": "launch",
 			"type": "cortex-debug",
+			"runToEntryPoint": "main",
+			"device": "stm32l0",
 			"servertype": "openocd",
 			"serverpath": "/opt/homebrew/bin/openocd",
+			"gdbPath": "/opt/homebrew/bin/gdb",
             "configFiles": [
                 "/opt/homebrew/share/openocd/scripts/interface/stlink.cfg",
                 "/opt/homebrew/share/openocd/scripts/target/stm32l0.cfg"
             ],
-			"device": "STM32L053R8",
-			"interface": "swd",
-			"runToEntryPoint": "main",
+			"preLaunchCommands": [
+				"monitor program ${workspaceFolder}/firmware_application/firmware_application.elf verify reset"
+			],
+			"internalConsoleOptions": "neverOpen",
 		}
-	]
+	],
 }

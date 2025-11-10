@@ -254,10 +254,10 @@ LOAD linker stubs
  .debug_line    0x00000000      0x330 src/firmware_bootloader.o
  .debug_line    0x00000330      0x40b ../libopencm3/lib/libopencm3_stm32l0.a(vector.o)
 
-.debug_str      0x00000000     0x5dc6
- .debug_str     0x00000000     0x5dc6 src/firmware_bootloader.o
-                               0x5088 (size before relaxing)
- .debug_str     0x00005dc6     0x542e ../libopencm3/lib/libopencm3_stm32l0.a(vector.o)
+.debug_str      0x00000000     0x5dd4
+ .debug_str     0x00000000     0x5dd4 src/firmware_bootloader.o
+                               0x508f (size before relaxing)
+ .debug_str     0x00005dd4     0x5435 ../libopencm3/lib/libopencm3_stm32l0.a(vector.o)
 
 .comment        0x00000000       0x46
  .comment       0x00000000       0x46 src/firmware_bootloader.o

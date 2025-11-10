@@ -12,7 +12,7 @@
                 "STM32L053R8"
             ],
             "compilerPath": "/opt/homebrew/bin/arm-none-eabi-gcc",
-            "cStandard": "c17",
+            "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-arm"
         },
@@ -55,7 +55,7 @@
                 "DESKTOP_BUILD"
             ],
             "compilerPath": "/Library/Developer/CommandLineTools/usr/bin/gcc",
-            "cStandard": "c17",
+            "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "macos-gcc-arm64"
         }

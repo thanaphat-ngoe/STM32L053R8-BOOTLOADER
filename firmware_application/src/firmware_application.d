@@ -1,5 +1,6 @@
 src/firmware_application.o: src/firmware_application.c \
- ../shared/inc/core/system.h inc/common-defines.h \
+ ../libopencm3/include/libopencm3/stm32/rcc.h \
+ ../libopencm3/include/libopencm3/cm3/common.h \
  /Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/14.3.1/include/stdint.h \
  /Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/arm-none-eabi/include/stdint.h \
  /Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/arm-none-eabi/include/machine/_default_types.h \
@@ -8,8 +9,6 @@ src/firmware_application.o: src/firmware_application.c \
  /Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/_intsup.h \
  /Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h \
  /Applications/ArmGNUToolchain/14.3.rel1/arm-none-eabi/lib/gcc/arm-none-eabi/14.3.1/include/stdbool.h \
- ../shared/inc/core/uart.h ../libopencm3/include/libopencm3/stm32/rcc.h \
- ../libopencm3/include/libopencm3/cm3/common.h \
  ../libopencm3/include/libopencm3/stm32/memorymap.h \
  ../libopencm3/include/libopencm3/stm32/l0/memorymap.h \
  ../libopencm3/include/libopencm3/cm3/memorymap.h \
@@ -24,4 +23,5 @@ src/firmware_application.o: src/firmware_application.c \
  ../libopencm3/include/libopencm3/stm32/common/gpio_common_f24.h \
  ../libopencm3/include/libopencm3/stm32/common/gpio_common_f234.h \
  ../libopencm3/include/libopencm3/stm32/common/gpio_common_all.h \
- ../libopencm3/include/libopencm3/cm3/scb.h
+ ../libopencm3/include/libopencm3/cm3/scb.h ../shared/inc/core/system.h \
+ inc/common-defines.h ../shared/inc/core/uart.h
