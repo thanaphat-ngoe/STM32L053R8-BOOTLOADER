@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "STM32L053R8 Firmware (Bootloader + Application)",
+            "name": "Firmware (Bootloader + Application)",
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/libopencm3/include",

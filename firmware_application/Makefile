@@ -60,6 +60,7 @@ OBJS		+= $(SRC_DIR)/$(BINARY).o
 OBJS		+= $(SRC_DIR)/firmware_bootloader.o
 OBJS		+= $(SHARED_SRC_DIR)/core/system.o
 OBJS		+= $(SHARED_SRC_DIR)/core/uart.o
+OBJS		+= $(SHARED_SRC_DIR)/core/ring-buffer.o
 
 ###############################################################################
 # C flags
