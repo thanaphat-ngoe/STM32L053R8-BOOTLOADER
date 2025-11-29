@@ -5,11 +5,11 @@
 #include "core/system.h"
 #include "core/uart.h"
 
-#define BOOTLOADER_SIZE (0x8000U) // 32 KByte (32768 Byte)
-#define MAIN_APPLICATION_START_ADDRESS (FLASH_BASE + BOOTLOADER_SIZE) // 0x08000000 + 0x8000 (0x08008000)
+#define BOOTLOADER_SIZE (0x4000U) // 16 KByte (16384 Byte)
+#define MAIN_APPLICATION_START_ADDRESS (FLASH_BASE + BOOTLOADER_SIZE) // 0x08000000 + 0x4000 (0x08004000)
 
 static void vector_setup(void) {
-    SCB_VTOR = BOOTLOADER_SIZE;
+    SCB_VTOR = MAIN_APPLICATION_START_ADDRESS;
 }
 
 static void gpio_setup(void) {
@@ -25,7 +25,6 @@ int main(void) {
     gpio_setup();
     uart_setup();
     
-    volatile uint32_t test = SCB_VTOR;
     uint64_t start_time = system_get_ticks();
 
     while (1) {
@@ -33,11 +32,6 @@ int main(void) {
             gpio_toggle(GPIOA, GPIO5);
             start_time = system_get_ticks();
         }
-
-        // if (uart_data_available()) {
-        //     uint8_t data = uart_read_byte();
-        //     uart_write_byte(data + 1);
-        // }
     }
     
     return 0;

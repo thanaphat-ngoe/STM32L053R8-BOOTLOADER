@@ -63,14 +63,11 @@ bool tl_is_ack_segment(const tl_segment_t* segment) {
 }
 
 bool tl_is_single_byte_segment(const tl_segment_t* segment, const uint8_t byte) {
-    if (segment->segment_data_size == 0 && segment->segment_data_size > 1) {
+    if (segment->segment_data_size == 0 || segment->segment_data_size > 1) {
         return false;
     }
 
-    if (
-        (segment->segment_type == SEGMENT_ACK || segment->segment_type == SEGMENT_RETX) 
-        && segment->segment_type != 0
-    ) {
+    if (segment->segment_type == SEGMENT_ACK || segment->segment_type == SEGMENT_RETX || segment->segment_type != 0) {
         return false;
     }
 
@@ -109,12 +106,12 @@ void tl_create_single_byte_segment(tl_segment_t* segment, uint8_t byte) {
     segment->segment_crc = tl_compute_crc(segment);
 }
 
-void tl_setup(void) {
+void TL_Init(void) {
     tl_create_retx_segment(&retx_segment);
     tl_create_ack_segment(&ack_segment);
 }
 
-void tl_update(void) {
+void TL_Update(void) {
     while (uart_data_available()) {
         switch (state) {
             case TL_State_Segment_Data_Size: {

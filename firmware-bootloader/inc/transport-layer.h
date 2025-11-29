@@ -9,8 +9,8 @@
 #define SEGMENT_CRC_SIZE (1) // 1 Byte
 #define SEGMENT_LENGTH (SEGMENT_DATA_SIZE + SEGMENT_LENGTH_SIZE + SEGMENT_CRC_SIZE + SEGMENT_TYPE_SIZE) // Up to 35 Byte
 
-#define SEGMENT_RETX (1)
-#define SEGMENT_ACK (2)
+#define SEGMENT_RETX (0x01)
+#define SEGMENT_ACK (0x02)
 
 #define BL_AL_MESSAGE_SEQ_OBSERVED (0x20)
 #define BL_AL_MESSAGE_FW_UPDATE_REQ (0x31)
@@ -30,8 +30,8 @@ typedef struct tl_segment_t {
     uint8_t segment_crc;
 } tl_segment_t;
 
-void tl_setup(void);
-void tl_update(void);
+void TL_Init(void);
+void TL_Update(void);
 
 bool tl_segment_available(void);
 void tl_write(tl_segment_t* segment);

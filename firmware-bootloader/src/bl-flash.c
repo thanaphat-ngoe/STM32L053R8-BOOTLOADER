@@ -209,8 +209,8 @@ typedef struct {
 #define HAL_IS_BIT_SET(REG, BIT) (((REG) & (BIT)) == (BIT))
 #define HAL_IS_BIT_CLR(REG, BIT) (((REG) & (BIT)) == 0U)
 
-#define BOOTLOADER_SIZE (0x8000U) // 32 KByte (32768 Byte)
-#define MAIN_APPLICATION_START_ADDRESS (FLASH_BASE + BOOTLOADER_SIZE) // 0x08000000 + 0x8000 (0x08008000)
+#define BOOTLOADER_SIZE (0x4000U) // 16 KByte (16384 Byte)
+#define MAIN_APPLICATION_START_ADDRESS (FLASH_BASE + BOOTLOADER_SIZE) // 0x08000000 + 0x4000 (0x08004000)
 
 #define FLASH_PEKEY1 (0x89ABCDEFU) /*!< Flash program erase key1 */
 #define FLASH_PEKEY2 (0x02030405U) /*!< Flash program erase key: used with FLASH_PEKEY2 to unlock the write access to the FLASH_PECR register and data EEPROM */
@@ -277,11 +277,11 @@ static void FLASH_SetErrorCode(void) {
 HAL_StatusTypeDef FLASH_WaitForLastOperation(uint32_t Timeout) {
     /* Wait for the FLASH operation to complete by polling on BUSY flag to be reset. Even if the FLASH operation fails, the BUSY flag will be reset and an error flag will be set */
      
-    uint32_t tickstart = system_get_ticks();
+    uint32_t tickstart = SYSTEM_Get_Ticks();
      
     while (__HAL_FLASH_GET_FLAG(FLASH_FLAG_BSY)) { 
         if (Timeout != HAL_MAX_DELAY) {
-            if ((Timeout == 0U) || ((system_get_ticks()-tickstart) > Timeout)) {
+            if ((Timeout == 0U) || ((SYSTEM_Get_Ticks()-tickstart) > Timeout)) {
                 return HAL_TIMEOUT;
             }
         }
@@ -479,7 +479,7 @@ uint32_t BL_FLASH_ERASE_Main_Application(void) {
 
     EraseInit.TypeErase = FLASH_TYPEERASE_PAGES;
     EraseInit.PageAddress = MAIN_APPLICATION_START_ADDRESS;
-    EraseInit.NbPages = 256;
+    EraseInit.NbPages = 384;
 
     HAL_FLASH_Unlock();
     HAL_FLASHEx_Erase(&EraseInit, &PageError);

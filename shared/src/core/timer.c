@@ -1,15 +1,15 @@
 #include "core/timer.h"
 #include "core/system.h"
 
-void timer_setup(timer_t* timer, uint64_t wait_time, bool auto_reset) {
+void TIMER_Init(timer_t* timer, uint64_t wait_time, bool auto_reset) {
     timer->wait_time = wait_time;
     timer->auto_reset = auto_reset;
-    timer->target_time = system_get_ticks() + wait_time;
+    timer->target_time = SYSTEM_Get_Ticks() + wait_time;
     timer->has_elapsed = false;
 }
 
-bool timer_has_elapsed(timer_t* timer) {
-    uint64_t now = system_get_ticks();
+bool TIMER_Is_Elapsed(timer_t* timer) {
+    uint64_t now = SYSTEM_Get_Ticks();
     bool has_elapsed = now >= timer->target_time;
 
     if (timer->has_elapsed) return false;
@@ -26,6 +26,6 @@ bool timer_has_elapsed(timer_t* timer) {
     return has_elapsed;
 }
  
-void timer_reset(timer_t* timer) {
-    timer_setup(timer, timer->wait_time, timer->auto_reset);
+void TIMER_Reset(timer_t* timer) {
+    TIMER_Init(timer, timer->wait_time, timer->auto_reset);
 }

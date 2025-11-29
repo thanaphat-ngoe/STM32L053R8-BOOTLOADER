@@ -20,4 +20,4 @@ Implement a firmware encryption and firmware upload capability via USB
 6. cortex-debug
 
 ## Hardware Memory Map
-![STM32L053R8_Overview_Hardware_Memory_Map](pics/STM32L053R8_Overview_Hardware_Memory_Map.png)
+![STM32L053R8_Overview_Hardware_Memory_Map](pictures/STM32L053R8_Overview_Hardware_Memory_Map.png)

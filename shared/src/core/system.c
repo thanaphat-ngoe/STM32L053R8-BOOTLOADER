@@ -18,7 +18,7 @@ static void systick_setup(void) {
     systick_interrupt_enable();
 }
 
-uint64_t system_get_ticks(void) {
+uint64_t SYSTEM_Get_Ticks(void) {
     return ticks;
 }
 
@@ -57,19 +57,19 @@ static void pll_32mhz_clock_setup(void) {
     while((RCC_CFGR & 0xC) != 0xC);
 }
 
-void system_setup(void) {
+void SYSTEM_Init(void) {
     pll_32mhz_clock_setup();
     systick_setup();
 }
 
-void system_setup_reset(void) {
+void SYSTEM_Init_Reset(void) {
     systick_interrupt_disable();
     systick_counter_disable();
     systick_clear();
     rcc_set_sysclk_source(RCC_MSI);
 }
 
-void system_delay(uint64_t millisecond) {
-    uint64_t end_time = system_get_ticks() + millisecond;
-    while (system_get_ticks() < end_time); // Loop
+void SYSTEM_Delay(uint64_t millisecond) {
+    uint64_t end_time = SYSTEM_Get_Ticks() + millisecond;
+    while (SYSTEM_Get_Ticks() < end_time); // Loop
 }

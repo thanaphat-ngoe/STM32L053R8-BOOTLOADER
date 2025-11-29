@@ -22,7 +22,7 @@ void usart2_isr(void) {
     }
 }
 
-void uart_setup(void) {
+void UART_Init(void) {
     ring_buffer_setup(&rb, data_buffer, RING_BUFFER_SIZE);
     rcc_periph_clock_enable(RCC_USART2);
     usart_set_flow_control(USART2, USART_FLOWCONTROL_NONE);
@@ -36,7 +36,7 @@ void uart_setup(void) {
     usart_enable(USART2);
 }
 
-void uart_setup_reset(void) {
+void UART_Init_Reset(void) {
     usart_disable_rx_interrupt(USART2);
     usart_disable(USART2);
     nvic_disable_irq(NVIC_USART2_IRQ);

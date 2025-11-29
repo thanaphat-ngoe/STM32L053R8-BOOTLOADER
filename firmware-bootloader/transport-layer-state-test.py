@@ -22,18 +22,28 @@ class TL_STATE_T(Enum):
 
 test_segment = array('B', [0xFF] * 35)
 
+#define SYNC_SEQ_0 (0x01)
+#define SYNC_SEQ_1 (0x02)
+#define SYNC_SEQ_2 (0x03)
+#define SYNC_SEQ_3 (0x04)
+
 while(True):
     test_segment[0] = 0x00
     test_segment[1] = 0x00
 
-    for i in range(35):
-        segment_to_send = test_segment[i].to_bytes(1)
-        serial.write(segment_to_send)
-        segment_to_send_convert = segment_to_send[0]
-        print(f"test_segment[{i}] sent = 0x{segment_to_send_convert:02x}")
+    serial.write(0x01)
+    serial.write(0x02)
+    serial.write(0x03)
+    serial.write(0x04)
+
+    # for i in range(35):
+    #     segment_to_send = test_segment[i].to_bytes(1)
+        
+    #     segment_to_send_convert = segment_to_send[0]
+    #     print(f"test_segment[{i}] sent = 0x{segment_to_send_convert:02x}")
     print("\n")
 
-    time.sleep(1)
+    time.sleep(4)
 
     segment_data_size = serial.read(1)
     segment_type = serial.read(1)

@@ -6,9 +6,9 @@
 #define CPU_FREQ (32000000)
 #define SYSTICK_FREQ (1000)
 
-void system_setup(void);
-void system_setup_reset(void);
-uint64_t system_get_ticks(void);
-void system_delay(uint64_t millisecond);
+void SYSTEM_Init(void);
+void SYSTEM_Init_Reset(void);
+uint64_t SYSTEM_Get_Ticks(void);
+void SYSTEM_Delay(uint64_t millisecond);
 
 #endif

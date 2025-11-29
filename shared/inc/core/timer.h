@@ -10,8 +10,8 @@ typedef struct timer_t {
     bool has_elapsed;
 } timer_t;
 
-void timer_setup(timer_t* timer, uint64_t wait_time, bool auto_reset);
-bool timer_has_elapsed(timer_t* timer);
-void timer_reset(timer_t* timer);
+void TIMER_Init(timer_t* timer, uint64_t wait_time, bool auto_reset);
+bool TIMER_Is_Elapsed(timer_t* timer);
+void TIMER_Reset(timer_t* timer);
 
 #endif
