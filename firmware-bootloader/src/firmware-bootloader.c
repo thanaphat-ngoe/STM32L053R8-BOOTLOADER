@@ -60,7 +60,7 @@ static void GPIO_Init_Reset(void) {
     rcc_periph_clock_disable(RCC_GPIOA);
 }
 
-static void PASS_CONTROL_TO_MAIN_APP(void) {
+static void Jump_To_Main_Application(void) {
     vector_table_t* main_vector_table = (vector_table_t*)(MAIN_APPLICATION_START_ADDRESS);
     main_vector_table->reset();
 }
@@ -149,7 +149,6 @@ int main(void) {
                     continue;
                 }
             }
-            continue;
         }
 
         TL_Update();
@@ -265,7 +264,7 @@ int main(void) {
     UART_Init_Reset();
     GPIO_Init_Reset();
     SYSTEM_Init_Reset(); 
-    PASS_CONTROL_TO_MAIN_APP();
+    Jump_To_Main_Application();
 
     // Must never return;
     return 0; 
