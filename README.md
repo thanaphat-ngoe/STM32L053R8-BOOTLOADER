@@ -1,9 +1,11 @@
 # Custom Bootloader Implmentation on STM32L053R8
 
 This project are the part of self-learning in Embedded System as a 4th-Year Computer Engineering Student <br>
-Note! This project still be in progress 
+
 ---
 
+## Note
+Note! This project still be in progress 
 ## Goal
 Be able to upload a firmware from application on a computer via USB-to-UART (ST-LINK) to STM32L053R8 with custom bootloader and packet protocol
 
